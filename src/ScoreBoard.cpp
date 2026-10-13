@@ -35,11 +35,11 @@ int ScoreBoard::getScore() const {
 
 void ScoreBoard::checkAndUpdateHighScore() {
 	fstream input;
-	input.open("scr.txt", ios::in);
+	input.open("data/highscore.txt", ios::in);
 	input >> highScore;
 	if (highScore < score) {
 		fstream output;
-		output.open("scr.txt", ios::out);
+		output.open("data/highscore.txt", ios::out);
 		output << score;
 		output.close();
 	}
